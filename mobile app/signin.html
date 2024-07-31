@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Widget</title>
+    <style>
+        /* Reset default styles */
+        body, h1, p, input,button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: 1600px 1000px;
+         }
+       
+         /* Full viewport height for centering the widget */
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('./index.jpg') no-repeat center center;
+        }
+        
+        /* Widget container */
+        .widget {
+            width: 320px;
+            padding: 20px;
+            background-size: cover;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Overlay effect */
+        .widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: blue;
+            z-index: 1;
+        }
+        
+        /* Widget content */
+        .widget-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .widget h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .widget p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .widget input[type="text"], 
+        .widget input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .widget button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .widget button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <div class="widget-content">
+            <h1>Sign In</h1>
+            <p>Enter your credentials to access your account.</p>
+            <form action="/signin" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

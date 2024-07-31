@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Request Widget</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, p, input, textarea, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: 1600px 1000px;
+            margin-bottom: 200px;
+        }
+        body{
+            background: url('./index.jpg') no-repeat center center;
+            margin-bottom: 200px;
+
+
+        }
+        
+        /* Widget container */
+        .widget {
+            width: 350px;
+            padding: 20px;
+            margin: 20px auto;
+            background-size: cover;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px black;
+            background: url('./index.jpg') no-repeat center center;
+
+        }
+        
+        /* Overlay effect */
+        .widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: blue;
+            z-index: 1;
+        }
+        
+        /* Widget content */
+        .widget-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .widget h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .widget p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .widget input, .widget textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .widget button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button{
+            background-color: red;
+        }
+        
+        .widget button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <div class="widget-content">
+            <h1>Submit Your Request</h1>
+            <p>Please fill out the form below to submit your request.</p>
+            <form action="/submit-request" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Request" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

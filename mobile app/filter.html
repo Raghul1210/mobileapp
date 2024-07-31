@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Widget</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, select, input {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: 1600px 1000px;
+        }
+        body{
+            background: url('./index.jpg') no-repeat center center;
+
+        }
+        
+        /* Widget container */
+        .filter-widget {
+            width: 300px;
+            padding: 20px;
+            margin: 20px auto;
+            background-size: cover;
+            border-radius: 10px;
+            color: white;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: blue;
+            }
+        
+        /* Overlay effect */
+        .filter-widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        /* Widget content */
+        .filter-widget-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .filter-widget h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .filter-widget label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .filter-widget select, .filter-widget input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .filter-widget select:hover, .filter-widget input:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .filter-widget button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .filter-widget button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-widget">
+        <div class="filter-widget-content">
+            <h2>Filter Options</h2>
+            
+            <label for="price">Price</label>
+            <select id="price">
+                <option value="low-to-high">Low to High</option>
+                <option value="high-to-low">High to Low</option>
+            </select>
+            
+            <label for="sort">Sort By</label>
+            <select id="sort">
+                <option value="popularity">Popularity</option>
+                <option value="rating">Rating</option>
+                <option value="newest">Newest</option>
+            </select>
+            
+            <label for="brand">Brand</label>
+            <select id="brand">
+                <option value="brand1">Brand 1</option>
+                <option value="brand2">Brand 2</option>
+                <option value="brand3">Brand 3</option>
+            </select>
+            
+            <label for="offers">Offers</label>
+            <select id="offers">
+                <option value="all">All</option>
+                <option value="discount">Discounts</option>
+                <option value="buy-one-get-one">Buy One Get One</option>
+            </select>
+            
+            <label for="discount">Discount</label>
+            <input type="text" id="discount" placeholder="Enter discount percentage">
+            
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+    </div>
+    
+    <script>
+        function applyFilters() {
+            alert('Filters applied!');
+            // Implement filter application logic here
+        }
+    </script>
+</body>
+</html>

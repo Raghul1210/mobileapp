@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up </title>
+    <style>
+        /* Reset some default styles */
+        body, h1, p, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: 1600px 1000px;
+        }
+        
+        /* Center the widget on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: blue;
+            font-family: Arial, sans-serif;
+            background: url('./index.jpg') no-repeat center center;
+
+        }
+        
+        /* Signup widget container */
+        .widget {
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Overlay effect */
+        .widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: blue;
+            z-index: 1;
+        }
+        
+        /* Widget content */
+        .widget-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .widget h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .widget p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .widget input[type="text"],
+        .widget input[type="email"],
+        .widget input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: white;
+            color: white;
+        }
+        
+        .widget button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .widget button:hover {
+            background-color: #e64a19;
+        }
+        
+        .widget a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+        
+        .widget a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <div class="widget-content">
+            <h1>Sign Up</h1>
+            <p>Join us and start enjoying our services.</p>
+            <form action="submit_signup.html" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+    </div>
+</body>
+</html>

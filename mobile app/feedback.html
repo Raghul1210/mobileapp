@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Widget</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, p, input, textarea, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: 1600px 1000px;
+            margin-bottom: 200px;
+        }
+        body{
+            background: url('./index.jpg') no-repeat center center;
+
+        }
+
+        /* Widget container */
+        .feedback-widget {
+            width: 400px;
+            padding: 20px;
+            margin: 20px auto;
+            background-size: cover;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Overlay effect */
+        .feedback-widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: blue;
+            z-index: 1;
+        }
+
+        /* Widget content */
+        .widget-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .widget-content h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .widget-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .widget-content input, .widget-content textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .widget-content input[type="text"], .widget-content input[type="email"] {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        .widget-content textarea {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            height: 100px;
+            resize: vertical;
+        }
+
+        .widget-content button {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .widget-content button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-widget">
+        <div class="widget-content">
+            <h1>Feedback Form</h1>
+            <p>We would love to hear your thoughts!</p>
+            <form action="submit-feedback.html" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Feedback" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
